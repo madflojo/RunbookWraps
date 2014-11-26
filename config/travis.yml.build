@@ -1,5 +1,5 @@
 monitors:
-  check_testfile
+  check_testfile:
     url: https://dash.runbook.io/api/cr-api/de360723-217d-4081-85fd-450350ede01e
     check_key: WyJkZTM2MDcyMy0yMTdkLTQwODEtODVmZC00NTAzNTBlZGUwMWUiXQ.pkP4EiXphhlRUhdOTJAzS_SMxZg
     cmd: test -f testfile1
@@ -12,7 +12,7 @@ monitors:
         trigger: 0
         callon: failed
         cmd: touch testfile2
-  check_testfile
+  check_testfile:
     url: https://dash.runbook.io/api/cr-api/de360723-217d-4081-85fd-450350ede01e
     check_key: WyJkZTM2MDcyMy0yMTdkLTQwODEtODVmZC00NTAzNTBlZGUwMWUiXQ.pkP4EiXphhlRUhdOTJAzS_SMxZg
     cmd: test -f testfile3
