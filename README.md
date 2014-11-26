@@ -116,3 +116,12 @@ Put together a full configuration for nginx would look like the following.
             cmd: /etc/init.d/nginx restart
 
 Checkout the `config/nginx.yml.sample` sample configuration file for more advanced configurations.
+
+## Automated monitoring and reacting
+
+Since we have our `nginx.yml` configuration put together we can run the `monitor.py` and `reactor.py` wrappers at a scheduled interval via cron or any other scheduling service.
+
+        */5 * * * * /path/to/monitor.py -c /path/to/config/nginx.yml 2>&1 > /dev/null
+        */5 * * * * /path/to/reactor.py -c /path/to/config/nginx.yml 2>&1 > /dev/null        
+
+With the above cronjobs our `monitor.py` is now monitoring the status of nginx and if it failed it will send an HTTP webhook to Runbook setting the monitor to "failed". Every 5 minutes the `reactor.py` process will check with Runbook to see the status of the monitor, if the monitor is failed `reactor.py` will then execute through the reactions defined in the `nginx.yml` configuration file.
