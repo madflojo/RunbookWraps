@@ -1,0 +1,16 @@
+language: python
+python:
+  - 2.7
+
+install:
+  - pip install -r requirements.txt
+
+script:
+  - python monitor.py -c config/travis.yml.build
+  - python reactor.py -c config/travis.yml.build
+  - python monitor.py -c config/travis.yml.build
+  - python reactor.py -c config/travis.yml.build
+  - python monitor.py -c config/travis.yml.build
+  - python reactor.py -c config/travis.yml.build
+  - python monitor.py -c config/travis.yml.build
+  - python reactor.py -c config/travis.yml.build
