@@ -24,10 +24,21 @@ The second key is a human friendly monitor name which also contains a YAML dicti
 
 The individual monitors dictionary requires at least 3 keys.
 
-* `url` - This is a unique URL that you can get from Runbook.io when creating a webhook monitor
-* `check_key` - This is a unique token that you can get from the same location as the unique URL
-* `cmd` - This is the command that the monitor.py wrapper script should execute.
-* `args` - Optional: This can be used to pass arguments to the specified command. You are free to not use this option and simply specify all arguments via the `cmd` key.
+* `url` 
+
+This is a unique URL that you can get from Runbook.io when creating a webhook monitor
+
+* `check_key` 
+
+This is a unique token that you can get from the same location as the unique URL
+
+* `cmd` 
+
+This is the command that the monitor.py wrapper script should execute.
+
+* `args` 
+
+Optional: This can be used to pass arguments to the specified command. You are free to not use this option and simply specify all arguments via the `cmd` key.
 
 When put all together the configuration looks like the following.
 
@@ -75,10 +86,21 @@ The `reactions` key is a dictionary that can contain multiple reactions. This is
 
 The individual reaction requires 3 keys:
 
-* `trigger` - This is used to specify the number of failed or healthy monitors must be performed before the reaction is executed. This uses the `failcount` key in the JSON reply from Runbook.io's webhook.
-* `callon` - This key can specify either `healthy` or `failed` and is used to specify when the reaction should be performed.
-* `cmd` - This key is similar to the `monitor.py`'s key in that it is the comand to execute as the reaction
-* `args` - Optional: This key is available for passing arguments to the commands specified in the `cmd` key. Again, you can simply specify the full command in the `cmd` key, if desired.
+* `trigger` 
+
+This is used to specify the number of failed or healthy monitors must be performed before the reaction is executed. This uses the `failcount` key in the JSON reply from Runbook.io's webhook.
+
+* `callon` 
+
+This key can specify either `healthy` or `failed` and is used to specify when the reaction should be performed.
+
+* `cmd` 
+
+This key is similar to the `monitor.py`'s key in that it is the comand to execute as the reaction
+
+* `args` 
+
+Optional: This key is available for passing arguments to the commands specified in the `cmd` key. Again, you can simply specify the full command in the `cmd` key, if desired.
 
 Put together a full configuration for nginx would look like the following.
 
