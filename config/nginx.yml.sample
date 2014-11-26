@@ -1,0 +1,24 @@
+monitors:
+  Check nginx is running:
+    url: unique_url
+    check_key: unique_check_key
+    cmd: /bin/ps -elf | /bin/grep -q nginx
+    reactions:
+      log it:
+        trigger: 1
+        callon: failed
+        cmd: /usr/bin/logger "nginx is not running!"
+      restart nginx:
+        trigger: 5
+        callon: failed
+        cmd: /etc/init.d/nginx restart
+  Check for nginx pid file:
+    url: unique_url
+    check_key: unique_check_key
+    cmd: /bin/ps -p `/bin/cat /var/run/nginx.pid`
+    reactions:
+      log it:
+        trigger: 2
+        callon: failed
+        cmd: /usr/bin/logger "The nginx pid file cannot be found"
+
