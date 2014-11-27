@@ -6,11 +6,11 @@ install:
   - pip install -r requirements.txt
 
 script:
-  - python monitor.py -c config/travis.yml.build
-  - python reactor.py -c config/travis.yml.build
-  - python monitor.py -c config/travis.yml.build
-  - python reactor.py -c config/travis.yml.build
-  - python monitor.py -c config/travis.yml.build
-  - python reactor.py -c config/travis.yml.build
-  - python monitor.py -c config/travis.yml.build
-  - python reactor.py -c config/travis.yml.build
+  - python monitor.py -c config/travis.yml.build --debug
+  - python reactor.py -c config/travis.yml.build --debug
+  - python monitor.py -c config/travis.yml.build --debug
+  - python reactor.py -c config/travis.yml.build --debug
+  - python monitor.py -c config/travis.yml.build --debug
+  - python reactor.py -c config/travis.yml.build --debug
+  - python monitor.py -c config/travis.yml.build --debug
+  - python reactor.py -c config/travis.yml.build --debug
