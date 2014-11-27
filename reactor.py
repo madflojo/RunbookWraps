@@ -103,6 +103,10 @@ def crAPI(url, check_key):
     else:
         verify = True
 
+    if debug:
+        print "-" * 25
+        print("Sending %s to %s") % (payload, url)
+
     ## Perform request
     try:
         req = requests.post(url, data=payload, headers=headers, verify=verify)

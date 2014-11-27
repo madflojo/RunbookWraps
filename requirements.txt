@@ -1,2 +1,5 @@
 PyYAML==3.10
 requests==2.3.0
+pyOpenSSL
+ndg-httpsclient
+pyasn1
