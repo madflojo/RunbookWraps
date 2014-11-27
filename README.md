@@ -1,6 +1,8 @@
 RunbookWraps
 ============
 
+![Build Status](https://travis-ci.org/madflojo/RunbookWraps.svg?branch=master)
+
 **RunbookWraps** is a set of simple python scripts that can be used to interact with [Runbook.io](https://runbook.io). This repo contains two scripts, `monitor.py` and `reactor.py`.
 
 ## Monitor.py
