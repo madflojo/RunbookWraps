@@ -1,7 +1,7 @@
 monitors:
   check_testfile:
-    url: https://dash.runbook.io/api/cr-api/de360723-217d-4081-85fd-450350ede01e
     check_key: WyJkZTM2MDcyMy0yMTdkLTQwODEtODVmZC00NTAzNTBlZGUwMWUiXQ.pkP4EiXphhlRUhdOTJAzS_SMxZg
+    url: https://dash.runbook.io/api/cr-api/de360723-217d-4081-85fd-450350ede01e
     cmd: test -f testfile1
     reactions:
       create testfile1:
@@ -13,8 +13,8 @@ monitors:
         callon: failed
         cmd: touch testfile2
   check_testfile:
-    url: https://dash.runbook.io/api/cr-api/de360723-217d-4081-85fd-450350ede01e
     check_key: WyJkZTM2MDcyMy0yMTdkLTQwODEtODVmZC00NTAzNTBlZGUwMWUiXQ.pkP4EiXphhlRUhdOTJAzS_SMxZg
+    url: https://dash.runbook.io/api/cr-api/de360723-217d-4081-85fd-450350ede01e
     cmd: test -f testfile3
     reactions:
       create testfile3:
